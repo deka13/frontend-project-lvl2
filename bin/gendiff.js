@@ -2,7 +2,7 @@
 import program from 'commander';
 import { createRequire } from 'module';
 import path from 'path';
-import makeDiff from '../src';
+import makeDiff from '../src/index.js';
 
 const require = createRequire(import.meta.url);
 const { version, description } = require('../package.json');
