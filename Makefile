@@ -1,3 +1,11 @@
+install: install-deps
+
+run:
+	bin/nodejs-package.js 10
+
+install-deps:
+	npm ci
+
 test:
 	npm test
 
@@ -8,6 +16,6 @@ lint:
 	npx eslint .
 
 publish:
-	npm publish --dry-run
+	npm publish
 
 .PHONY: test
