@@ -1,10 +1,18 @@
 import fs from 'fs';
+import path from 'path';
 import getDiff from './getDiff.js';
+import parse from './parsers.js';
+
+const getParsedData = (filepath) => {
+  const ext = path.extname(filepath);
+  const fileData = fs.readFileSync(filepath, 'utf-8');
+  return parse(fileData, ext);
+};
 
 const makeDiff = (filepath1, filepath2) => {
-  const fileData1 = fs.readFileSync(filepath1, 'utf-8');
-  const fileData2 = fs.readFileSync(filepath2, 'utf-8');
-  return getDiff(JSON.parse(fileData1), JSON.parse(fileData2));
+  const parsedData1 = getParsedData(filepath1);
+  const parsedData2 = getParsedData(filepath2);
+  return getDiff(parsedData1, parsedData2);
 };
 
 export default makeDiff;

@@ -16,4 +16,10 @@ describe('Test default format', () => {
     const expected = getExpectedResult('stylishDiff.txt');
     expect(makeDiff(filePath1, filePath2)).toBe(expected);
   });
+  test('Flat yml files', () => {
+    const filePath1 = './__fixtures__/file1.yml';
+    const filePath2 = './__fixtures__/file2.yml';
+    const expected = getExpectedResult('stylishDiff.txt');
+    expect(makeDiff(filePath1, filePath2)).toBe(expected);
+  });
 });
