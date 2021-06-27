@@ -1,11 +1,11 @@
 import makeStylish from './stylish.js';
-import makePlain from './plain.js';
-// import makeJson from './json.js';
+import makePlain from './plain';
+import makeJson from './json';
 
 const formatType = {
   stylish: makeStylish,
   plain: makePlain,
-//   json: makeJson,
+  json: makeJson,
 };
 
 export default (format) => formatType[format];
