@@ -10,18 +10,6 @@ const getFilePath = (filename) => path.join(__dirname, '..', '__fixtures__', fil
 const getExpectedResult = (fileName) => fs.readFileSync(getFilePath(fileName), 'utf-8').trim();
 
 describe('Test default format', () => {
-  test('Flat json files', () => {
-    const filePath1 = './__fixtures__/file1.json';
-    const filePath2 = './__fixtures__/file2.json';
-    const expected = getExpectedResult('stylishDiff.txt');
-    expect(makeDiff(filePath1, filePath2)).toBe(expected);
-  });
-  test('Flat yml files', () => {
-    const filePath1 = './__fixtures__/file1.yml';
-    const filePath2 = './__fixtures__/file2.yml';
-    const expected = getExpectedResult('stylishDiff.txt');
-    expect(makeDiff(filePath1, filePath2)).toBe(expected);
-  });
   test('Deep json files', () => {
     const filePath1 = './__fixtures__/deepFile1.json';
     const filePath2 = './__fixtures__/deepFile2.json';
