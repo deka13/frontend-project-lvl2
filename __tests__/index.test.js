@@ -22,4 +22,10 @@ describe('Test default format', () => {
     const expected = getExpectedResult('stylishDiff.txt');
     expect(makeDiff(filePath1, filePath2)).toBe(expected);
   });
+  test('Deep json files', () => {
+    const filePath1 = './__fixtures__/deepFile1.json';
+    const filePath2 = './__fixtures__/deepFile2.json';
+    const expected = getExpectedResult('deepStylishDiff.txt');
+    expect(makeDiff(filePath1, filePath2)).toBe(expected);
+  });
 });
