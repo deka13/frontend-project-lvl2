@@ -13,9 +13,9 @@ program
   .description(description)
   .version(version)
   .arguments('<filepath1> <filepath2>')
-  .option('-f, --format <type>', 'output format')
+  .option('-f, --format <type>', 'output format', 'stylish')
   .action((filepath, filepath2) => {
-    console.log(makeDiff(getFullPath(filepath), getFullPath(filepath2)));
+    console.log(makeDiff(getFullPath(filepath), getFullPath(filepath2), program.format));
   });
 
 program.parse();
