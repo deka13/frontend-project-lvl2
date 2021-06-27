@@ -20,8 +20,8 @@ const typeActions = {
     (count, object, func) => stringifyValue(count, object.key, func(object.children, count + 1), '    '),
   updated:
     (count, object) => [
-      stringifyValue(count, object.key, object.newValue, '  + '),
       stringifyValue(count, object.key, object.oldValue, '  - '),
+      stringifyValue(count, object.key, object.newValue, '  + '),
     ],
   deleted:
     (count, object) => stringifyValue(count, object.key, object.value, '  - '),
