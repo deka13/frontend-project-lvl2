@@ -34,4 +34,16 @@ describe('Test default format', () => {
     const expected = getExpectedResult('deepStylishDiff.txt');
     expect(makeDiff(filePath1, filePath2)).toBe(expected);
   });
+  test('Plain format yml', () => {
+    const filePath1 = './__fixtures__/deepFile1.yml';
+    const filePath2 = './__fixtures__/deepFile2.yml';
+    const expected = getExpectedResult('plainDiff.txt');
+    expect(makeDiff(filePath1, filePath2, 'plain')).toBe(expected);
+  });
+  test('Plain format json', () => {
+    const filePath1 = './__fixtures__/deepFile1.json';
+    const filePath2 = './__fixtures__/deepFile2.json';
+    const expected = getExpectedResult('plainDiff.txt');
+    expect(makeDiff(filePath1, filePath2, 'plain')).toBe(expected);
+  });
 });
