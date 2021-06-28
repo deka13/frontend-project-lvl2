@@ -1,4 +1,4 @@
-import { test, expect } from '@jest/globals';
+import { test, expect, describe } from '@jest/globals';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
@@ -34,6 +34,8 @@ describe('Test default format', () => {
     const expected = getExpectedResult('deepStylishDiff.txt');
     expect(makeDiff(filePath1, filePath2)).toBe(expected);
   });
+});
+describe('Test plain and JSON formats', () => {
   test('Plain format yml', () => {
     const filePath1 = './__fixtures__/deepFile1.yml';
     const filePath2 = './__fixtures__/deepFile2.yml';
