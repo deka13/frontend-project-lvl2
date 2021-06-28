@@ -46,4 +46,16 @@ describe('Test default format', () => {
     const expected = getExpectedResult('plainDiff.txt');
     expect(makeDiff(filePath1, filePath2, 'plain')).toBe(expected);
   });
+  test('JSON format json', () => {
+    const filePath1 = './__fixtures__/deepFile1.json';
+    const filePath2 = './__fixtures__/deepFile2.json';
+    const expected = getExpectedResult('jsonDiff.txt');
+    expect(makeDiff(filePath1, filePath2, 'json')).toBe(expected);
+  });
+  test('JSON format yml', () => {
+    const filePath1 = './__fixtures__/deepFile1.yml';
+    const filePath2 = './__fixtures__/deepFile2.yml';
+    const expected = getExpectedResult('jsonDiff.txt');
+    expect(makeDiff(filePath1, filePath2, 'json')).toBe(expected);
+  });
 });
